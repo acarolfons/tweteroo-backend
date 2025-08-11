@@ -61,6 +61,7 @@ app.post("/sign-up", async (req, res) => {
 
 app.get("/tweets", async (req, res) => {
   try {
+    // Ordena os tweets por ID decrescente para que os mais recentes apareçam primeiro.
     const tweets = await db
       .collection("tweets")
       .find()
