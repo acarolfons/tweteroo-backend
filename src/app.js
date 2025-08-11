@@ -52,6 +52,7 @@ app.post("/sign-up", async (req, res) => {
       await db.collection("users").insertOne({ username, avatar });
       return res.status(201).send("Usuário cadastrado com sucesso!");
     }
+    // Caso o usuario ja exista, nao ha necessidade de criar um novo
     res.status(200).send("Bem-vindo de volta!");
   } catch (err) {
     res.status(500).send("Erro ao salvar usuário!");
